@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>netNostalgia forums · Does anyone else remember CANDLE COVE?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ddd2b4; --paper2:#f0e9d5; --paper3:#e6dcc2;
+  --ink:#2a251d; --ink2:#6a5f4b; --line:#b3a888; --line2:#8f866b;
+  --band:#243b36; --band2:#1a2c29; --amber:#a06414; --amber2:#c98a2a;
+  --link:#1f5f6b; --red:#8a2020; --green:#3a7a35;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:12px/1.65 Verdana,Geneva,sans-serif;overflow-x:hidden}
+::selection{background:#8a2020;color:#f0e9d5}
+a{color:var(--link);text-decoration:underline;cursor:pointer}
+a:hover{color:#13454e}
+img{max-width:100%}
+.mono{font-family:"Courier New",monospace}
+.hidden{display:none!important}
+
+/* ---------- CRT dressing (kept whisper-quiet) ---------- */
+#scan{position:fixed;inset:0;pointer-events:none;z-index:56;background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 3px)}
+#vig{position:fixed;inset:0;pointer-events:none;z-index:55;background:radial-gradient(ellipse at center,transparent 58%,rgba(24,18,8,.26) 100%)}
+#grain{position:fixed;inset:0;pointer-events:none;z-index:57;opacity:.05;background-size:130px 130px}
+#flash{position:fixed;inset:0;background:#e8e4d8;opacity:0;pointer-events:none;z-index:58;transition:opacity .06s}
+
+/* ---------- shell ---------- */
+#wrap{max-width:960px;margin:0 auto 70px;padding:0 10px}
+#fhead{background:var(--band);border:1px solid var(--band2);border-bottom:3px solid var(--band2);color:#d7e4da;padding:14px 18px 12px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-top:16px}
+#logo{display:flex;align-items:center;gap:12px;cursor:pointer}
+#logo .lt{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:-1px;color:#ecdfb8;line-height:1}
+#logo .lt small{display:block;font-family:Verdana;font-size:9px;letter-spacing:5px;color:#9db3a4;margin-top:3px}
+#logo .tag{font-size:10px;font-style:italic;color:#8fa397;margin-top:2px}
+#userbox{text-align:right;font-size:11px;color:#a9bfb2}
+#userbox b{color:#ecdfb8}
+#userbox a{color:#c9d8c6}
+#fnav{background:var(--band2);color:#8fa397;padding:5px 18px;font-size:11px;border:1px solid var(--band2);border-top:none}
+#fnav a{color:#b8cabb;margin-right:14px}
+#ticker{border:1px solid var(--line);border-top:none;background:var(--paper3);padding:5px 14px;font-family:"Special Elite",monospace;font-size:12px;color:#6b4a1e;letter-spacing:.5px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+
+/* ---------- forum tables ---------- */
+.catbar{background:var(--band);color:#d7e4da;font-weight:bold;font-size:12px;padding:6px 12px;border:1px solid var(--band2);margin-top:18px}
+.board{background:var(--paper2);border:1px solid var(--line);border-top:none;padding:12px 14px;display:flex;gap:14px;align-items:center}
+.board .bd h3{margin:0 0 3px;font-size:14px}
+.board .bd p{margin:0;color:var(--ink2);font-size:11px}
+.thead,.trow{display:flex;align-items:center;padding:7px 12px;border:1px solid var(--line);border-top:none;font-size:11px}
+.thead{background:#cfc4a2;color:#5a5142;font-weight:bold;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.trow{background:var(--paper2)}
+.trow:hover{background:#f6f1df}
+.trow .tt{flex:1;min-width:0;padding-right:10px}
+.trow .tt .sub{color:var(--ink2);font-size:10px;margin-top:2px}
+.trow .st{width:130px;flex:none;text-align:center;color:var(--ink2)}
+.trow .lp{width:170px;flex:none;text-align:right;color:var(--ink2)}
+.tagx{font-size:9px;letter-spacing:1px;border:1px solid var(--line2);color:var(--ink2);padding:1px 5px;margin-right:6px;vertical-align:1px}
+.tagx.lock{color:var(--red);border-color:var(--red)}
+.tagx.hot{color:#8a5a12;border-color:#8a5a12}
+.fstats{border:1px solid var(--line);border-top:none;background:var(--paper3);padding:7px 12px;font-size:10px;color:var(--ink2)}
+#ffoot{margin:26px 0 8px;text-align:center;font-size:10px;color:var(--ink2)}
+
+/* ---------- thread ---------- */
+.crumbs{font-size:11px;color:var(--ink2);margin:16px 0 4px}
+#threadtitle{font-family:Georgia,serif;font-size:20px;margin:2px 0 2px}
+#threadmeta{font-size:10px;color:var(--ink2);margin-bottom:12px}
+#whobox{border:1px solid var(--line);background:var(--paper3);padding:6px 12px;font-size:11px;margin-bottom:16px}
+#whobox .on{color:var(--green);font-weight:bold}
+#whobox .off{color:#9a9078}
+#whobox .you{color:var(--amber);font-weight:bold}
+#whobox .percy{color:var(--red);font-weight:bold}
+
+.post{border:1px solid var(--line);background:var(--paper2);margin:14px 0;animation:pin .5s ease both}
+@keyframes pin{from{opacity:0;transform:translateY(14px)}}
+.phead{display:flex;justify-content:space-between;gap:10px;background:var(--band);color:#cfe2d6;padding:4px 12px;font-size:11px}
+.phead .ph2{color:#9db3a4}
+.pbody{display:flex}
+.pside{width:150px;flex:none;border-right:1px solid var(--line);padding:12px 8px;text-align:center;background:rgba(58,50,30,.05)}
+.pside canvas{width:72px;height:72px;image-rendering:pixelated;border:1px solid var(--line2);background:#111}
+.pside .un{font-weight:bold;font-size:12px;margin-top:6px;display:block;cursor:pointer}
+.pside .rk{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--ink2)}
+.pside .stars{color:var(--amber2);font-size:9px;letter-spacing:2px}
+.pside .pm{font-size:10px;color:var(--ink2);line-height:1.5;margin-top:4px}
+.pmain{flex:1;padding:12px 16px;min-width:0;word-wrap:break-word}
+.pmain .body{font-size:12px}
+.pfoot{border-top:1px dotted var(--line);margin-top:12px;padding-top:5px;font-size:10px;color:var(--ink2)}
+.pfoot a{margin-right:12px}
+.psig{border-top:1px dotted var(--line);margin-top:10px;padding-top:6px;font-style:italic;color:var(--ink2);font-size:11px}
+
+.att{border:1px dashed var(--line2);background:rgba(0,0,0,.03);padding:10px 12px;margin:10px 0;max-width:520px;font-size:11px;color:var(--ink2)}
+.att b{color:var(--ink)}
+.att.broken{border-color:#a05555}
+.att.broken .fnot{color:var(--red);font-family:"Special Elite",monospace;letter-spacing:.5px}
+.att .attbtn{margin-top:8px}
+.att.pulse{animation:pls 1s infinite}
+@keyframes pls{50%{border-color:var(--red);background:rgba(138,32,32,.07)}}
+.framebox{position:relative;display:inline-block;border:1px solid #443c2c;box-shadow:3px 3px 0 rgba(40,32,16,.25);margin:10px 0;max-width:520px}
+.framebox .ts{position:absolute;right:6px;bottom:5px;font-family:"Courier New",monospace;font-size:12px;color:#e6e0c8;text-shadow:1px 1px 0 #000;letter-spacing:1px}
+.attcap{font-size:10px;color:var(--ink2);margin-top:4px}
+
+.stamp{font-family:"Special Elite",monospace;color:#5d1c1c;border:1px dashed #9a6a6a;background:rgba(138,32,32,.045);padding:14px 18px;margin:20px 0;font-size:13px;line-height:1.7;white-space:pre-wrap;position:relative;animation:pin .5s both}
+.stamp .tag{position:absolute;right:12px;top:-11px;background:var(--red);color:#f2ecd9;padding:2px 9px;transform:rotate(-3.5deg);font-size:11px;letter-spacing:3px}
+.stamp.dim{color:#6a5f4b;border-color:var(--line2);background:transparent}
+
+.draft{border:1px solid #7a6a44;background:#f6f0da;margin:18px 0;animation:pin .5s both}
+.draft .dh{background:#7a6a44;color:#f4eed6;font-family:"Special Elite",monospace;padding:6px 14px;font-size:12px;letter-spacing:1px}
+.draft .db{padding:12px 14px}
+.draft .db p{margin:0 0 10px;color:var(--ink2);font-size:11px}
+.dopt{display:block;width:100%;text-align:left;margin:6px 0;padding:9px 12px;font:12px Verdana;background:var(--paper2);border:1px solid var(--line2);cursor:pointer}
+.dopt:hover{background:#efe6c8;border-color:var(--amber);transform:translateX(3px)}
+.dopt:active{transform:translateX(0)}
+
+/* ---------- reply box ---------- */
+#replybox{border:1px solid var(--line);background:var(--paper2);margin-top:26px}
+#replybox .rh{background:var(--band);color:#cfe2d6;padding:5px 12px;font-size:11px;font-weight:bold}
+#replybox .rb{padding:12px 14px}
+#replybox label{font-size:10px;color:var(--ink2);display:block;margin-bottom:3px}
+#replybox textarea{width:100%;height:86px;font:12px Verdana;border:1px solid var(--line2);background:#fbf7ea;padding:8px;resize:vertical}
+#replybox .rrow{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+#replybox .rnote{font-size:10px;color:var(--ink2);font-style:italic}
+#replybox.locked .rb{color:var(--ink2)}
+
+/* ---------- status bar ---------- */
+#sbar{position:fixed;left:0;right:0;bottom:0;height:32px;background:#141b19;color:#a9bfb2;border-top:1px solid #2c3c36;display:flex;align-items:center;gap:16px;padding:0 14px;font-size:11px;z-index:70}
+#sbar .mono{color:#d8c87a;letter-spacing:1px}
+#sact{flex:1;text-align:center;color:#7d938a;font-size:10px;letter-spacing:1px}
+#sact.busy::after{content:"…";animation:dots 1s steps(3) infinite}
+@keyframes dots{0%{content:""}33%{content:"."}66%{content:".."}100%{content:"..."}}
+#mutebtn{background:none;border:1px solid #3a4c45;color:#a9bfb2;cursor:pointer;padding:2px 8px;font-size:10px}
+#mutebtn:hover{color:#e6e0c8}
+
+/* ---------- overlays ---------- */
+.ov{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:80;background:rgba(10,12,11,.88);padding:14px}
+.dlg{background:var(--paper2);border:1px solid var(--line2);box-shadow:0 0 0 4px rgba(0,0,0,.25);max-width:440px;width:100%}
+.dlghead{background:var(--band);color:#d7e4da;padding:7px 14px;font-size:12px;font-weight:bold}
+.dlgbody{padding:16px 18px}
+.dlgbody label{font-size:10px;color:var(--ink2);display:block;margin:12px 0 3px;letter-spacing:1px;text-transform:uppercase}
+.dlgbody input{width:100%;font:13px "Courier New",monospace;padding:8px;border:1px solid var(--line2);background:#fbf7ea}
+.dlgbody input[readonly]{color:var(--ink2);background:var(--paper3)}
+.dlgbody .hint{font-size:10px;color:var(--ink2);font-style:italic;margin-top:3px}
+.err{color:var(--red);font-size:11px;min-height:16px;margin-top:5px}
+.dlgrow{display:flex;gap:10px;justify-content:flex-end;margin-top:10px;flex-wrap:wrap}
+.dlgrow .spacer{flex:1}
+
+.btn{font:11px Verdana;border:1px solid;border-color:#fbf5e2 #8f866b #8f866b #fbf5e2;background:#d9cfae;color:var(--ink);padding:4px 12px;cursor:pointer;letter-spacing:.5px}
+.btn:hover{background:#e4dbba}
+.btn:active{border-color:#8f866b #fbf5e2 #fbf5e2 #8f866b}
+.btn.primary{background:var(--band);color:#e6e0c8;border-color:#5a7a70 #142220 #142220 #5a7a70}
+.btn.primary:hover{background:#2e4a44}
+.btn[disabled]{opacity:.55;cursor:default}
+
+/* ---------- tuner ---------- */
+.tvwrap{width:min(700px,94vw)}
+.tvbez{background:#181a17;border:1px solid #000;box-shadow:0 0 0 6px #23251f,0 0 0 7px #3a3c34;padding:12px}
+.tvhead{color:#8fa38f;font-family:"Special Elite",monospace;font-size:12px;letter-spacing:2px;display:flex;justify-content:space-between;padding-bottom:8px}
+#tvc{width:100%;display:block;background:#000;image-rendering:pixelated;border:1px solid #000}
+.trow2{display:flex;align-items:center;gap:12px;margin-top:12px;color:#a9bfb2;font-size:10px;letter-spacing:2px}
+.trow2 input{flex:1}
+.tinfo{display:flex;justify-content:space-between;color:#d8c87a;font-family:"Courier New",monospace;font-size:12px;margin-top:8px;min-height:18px}
+#tabandon{margin-top:12px;background:#2a2c26;color:#a9bfb2;border-color:#4a4c42 #101210 #101210 #4a4c42}
+input[type=range]{-webkit-appearance:none;appearance:none;height:22px;background:transparent;cursor:pointer}
+input[type=range]::-webkit-slider-runnable-track{height:6px;background:#0c0e0c;border:1px solid #4a4636}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:24px;margin-top:-10px;background:#cfc49e;border:1px solid #000;border-radius:0}
+input[type=range]::-moz-range-track{height:6px;background:#0c0e0c;border:1px solid #4a4636}
+input[type=range]::-moz-range-thumb{width:14px;height:24px;background:#cfc49e;border:1px solid #000;border-radius:0}
+
+/* ---------- ending ---------- */
+#player{background:#000;z-index:85;flex-direction:column}
+#epc{width:min(100vw,100vh*1.6);max-width:100%;display:block}
+#epcounter{position:fixed;left:18px;bottom:16px;color:#cfc9b0;font-family:"Courier New",monospace;font-size:14px;letter-spacing:2px;text-shadow:0 0 2px #000}
+#epslate{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#000;color:#cfc9b0;font-family:"Special Elite",monospace;font-size:15px;line-height:2.1;text-align:center;white-space:pre-wrap;padding:20px}
+#epilogue{position:absolute;inset:0;background:#000;color:#cfc9b0;font-family:"Special Elite",monospace;font-size:16px;line-height:2.2;white-space:pre-wrap;display:flex;align-items:center;justify-content:center;padding:24px;overflow:auto}
+#epilogue .inner{max-width:640px;text-align:center}
+#epilogue button{margin-top:26px;background:#111;color:#cfc9b0;border:1px solid #4a4636;font-family:"Special Elite",monospace;font-size:14px;padding:8px 22px;cursor:pointer}
+#epilogue button:hover{border-color:#cfc9b0}
+
+/* ---------- boot ---------- */
+#boot{position:fixed;inset:0;background:#0a0c0a;z-index:95;display:flex;align-items:center;justify-content:center}
+#boot .bin{color:#9db3a4;font-family:"Special Elite",monospace;font-size:14px;white-space:pre-wrap;line-height:2;text-align:center;max-width:560px;padding:20px}
+#boot button{margin-top:20px;background:none;border:1px solid #4a5c54;color:#c9d8c6;font-family:"Special Elite",monospace;font-size:15px;padding:10px 26px;cursor:pointer;letter-spacing:2px}
+#boot button:hover{border-color:#c9d8c6}
+
+/* ---------- toast & chip ---------- */
+#toast{position:fixed;right:16px;bottom:44px;background:var(--band2);color:#d7e4da;border:1px solid #3a4c45;padding:8px 14px;font-size:11px;max-width:340px;z-index:75;transition:opacity .25s,transform .25s;opacity:0;transform:translateY(8px);pointer-events:none}
+#toast.show{opacity:1;transform:none}
+#chip{position:fixed;right:16px;bottom:44px;background:var(--band);color:#e6e0c8;border:1px solid #3a5c52;padding:6px 12px;font-size:11px;cursor:pointer;z-index:74}
+#chip:hover{background:var(--band2)}
+
+/* ---------- corruption ---------- */
+.rgbsplit{text-shadow:2px 0 rgba(190,40,40,.55),-2px 0 rgba(40,130,160,.55)}
+#wrap.c2{filter:contrast(1.03)}
+#wrap.c3{filter:saturate(.9) contrast(1.06)}
+.badtime{color:var(--red)!important;font-family:"Courier New",monospace}
+.sp{color:transparent;transition:color .3s}
+.sp::selection{color:#f0e9d5;background:#5d1c1c}
+.c3 .sp{color:rgba(138,32,32,.13)}
+.cut{text-rendering:optimizeSpeed}
+
+#flame{transform-origin:13px 10px;animation:flick 1.7s steps(1) infinite}
+@keyframes flick{0%{transform:scaleY(1) skewX(0)}18%{transform:scaleY(.9) skewX(2deg)}36%{transform:scaleY(1.06) skewX(-2deg)}55%{transform:scaleY(.94)}74%{transform:scaleY(1.02) skewX(1deg)}}
+#candlesvg.gutter #flame{animation:gut .8s steps(2) infinite}
+@keyframes gut{0%{transform:scaleY(.4);opacity:.55}50%{transform:scaleY(.8);opacity:.8}}
+#candlesvg.out #flame{opacity:0;animation:none}
+
+@media (max-width:700px){
+  .pbody{flex-direction:column}
+  .pside{width:100%;border-right:none;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;text-align:left;padding:8px 12px}
+  .pside canvas{width:52px;height:52px}
+  .pside .pinfo{text-align:left}
+  .trow .lp{display:none}
+  .trow .st{width:80px}
+}
+</style>
+</head>
+<body>
+<div id="vig"></div><div id="scan"></div><div id="grain"></div><div id="flash"></div>
+
+<div id="boot"><div class="bin" id="boottext"></div></div>
+
+<div id="wrap">
+  <header id="fhead">
+    <div id="logo">
+      <svg id="candlesvg" width="26" height="34" viewBox="0 0 26 34" aria-hidden="true">
+        <ellipse cx="13" cy="31.4" rx="8" ry="2.2" fill="#152221"/>
+        <rect x="8" y="14" width="10" height="17" rx="1.5" fill="#e6dcc0"/>
+        <rect x="8" y="20" width="10" height="3" fill="#33565c"/>
+        <line x1="13" y1="14" x2="13" y2="10.6" stroke="#4a3f2c" stroke-width="1.4"/>
+        <g id="flame">
+          <path d="M13 2.6 C16.2 6.4 16.7 8.6 13 10.7 C9.3 8.6 9.8 6.4 13 2.6 Z" fill="#e8a33c"/>
+          <path d="M13 5.2 C14.7 7 14.9 8.3 13 9.5 C11.1 8.3 11.3 7 13 5.2 Z" fill="#f6d67a"/>
+        </g>
+      </svg>
+      <div>
+        <div class="lt">netNostalgia<small>F O R U M S</small></div>
+        <div class="tag">remembering things that never happened, since 1999</div>
+      </div>
+    </div>
+    <div id="userbox">Welcome, <b id="ubname">guest</b>.<br><span id="ublinks"><a id="lreg">register</a> · <a id="llogin">log in</a> · archive mode</span></div>
+  </header>
+  <div id="fnav"><a data-toast>forum index</a><a data-toast>faq</a><a data-toast>search</a><a data-toast>member list</a><a data-toast>control panel</a></div>
+  <div id="ticker"></div>
+  <main id="view"></main>
+  <div id="ffoot">powered by ezBoard 2.1 · © 1999–2007 netNostalgia · this snapshot is property of the Lost Media Foundation<br><span id="recrun"></span></div>
+</div>
+
+<div id="sbar">
+  <span class="mono" id="sigblk">██████████</span><span class="mono" id="sigpct">100%</span>
+  <span id="sact">idle</span>
+  <span class="mono" id="kbps">24.0 kbps</span>
+  <button id="mutebtn">sound: on</button>
+</div>
+
+<div id="tuner" class="ov hidden">
+  <div class="tvwrap"><div class="tvbez">
+    <div class="tvhead"><span>LOST MEDIA FOUNDATION — SIGNAL RECOVERY TERMINAL</span><span>v2.1</span></div>
+    <canvas id="tvc" width="640" height="420"></canvas>
+    <div class="trow2"><span>TRACKING</span><input id="dial" type="range" min="0" max="100" step="0.1" value="0"><span id="dialval" class="mono">0.0</span></div>
+    <div class="tinfo"><span id="tstat">NO SIGNAL — move TRACKING until the frame resolves</span><span id="tpct">SIGNAL 0%</span></div>
+    <button id="tabandon">abandon recovery</button>
+  </div></div>
+</div>
+
+<div id="player" class="ov hidden">
+  <canvas id="epc" width="960" height="600"></canvas>
+  <div id="epcounter">00:00:00</div>
+  <div id="epslate" class="hidden"></div>
+  <div id="epilogue" class="hidden"><div class="inner" id="eptext"></div></div>
+</div>
+
+<div id="loginov" class="ov hidden">
+  <div class="dlg">
+    <div class="dlghead">register — archive session</div>
+    <div class="dlgbody">
+      <p style="margin-top:0">The archive requires a handle to index your memory. Your handle will be recovered from the snapshot alongside everything else. <b>Choose one you won't mind being remembered by.</b></p>
+      <label>display name</label>
+      <input id="nameinp" maxlength="18" autocomplete="off" spellcheck="false" placeholder="e.g. channel_12">
+      <label>password</label>
+      <input readonly value="••••••••••">
+      <div class="hint">passwords were not archived. everything was lost.</div>
+      <div class="err" id="nameerr"></div>
+      <div class="dlgrow"><button id="namerand" class="btn">recover a random handle</button><span class="spacer"></span><button id="nameok" class="btn primary">mount session</button></div>
+    </div>
+  </div>
+</div>
+
+<div id="chip" class="hidden"></div>
+<div id="toast"></div>
+
+<script>
+/* =============================================================
+   CANDLE COVE — a recovered thread
+   everything procedural: frames, avatars, audio. no assets.
+   ============================================================= */
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const store={get(k,d){try{return localStorage.getItem(k)??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+const state={name:'',cor:0,run:+(store.get('nnc_runs',0)||0),ended:false,ghost:false,attempts:0,
+             rec:{},replyLock:false,attEls:{},recWait:{}};
+const ANN={}; /* annotations set later (contain the player name) */
+
+/* ---------------- audio ---------------- */
+const AU={ctx:null,master:null,muted:store.get('nnc_mute','0')==='1',noiseBuf:null,nGain:null,nFilt:null,scream:null,humOsc:[]};
+function aInit(){
+  if(AU.ctx) return;
+  const C=window.AudioContext||window.webkitAudioContext; if(!C) return;
+  AU.ctx=new C();
+  AU.master=AU.ctx.createGain(); AU.master.gain.value=AU.muted?0:1; AU.master.connect(AU.ctx.destination);
+  const mk=(f,g)=>{const o=AU.ctx.createOscillator(),gn=AU.ctx.createGain();o.frequency.value=f;gn.gain.value=g;o.connect(gn);gn.connect(AU.master);o.start();AU.humOsc.push(o);};
+  mk(55,.011); mk(110,.005);
+  const b=AU.ctx.createBuffer(1,AU.ctx.sampleRate*2,AU.ctx.sampleRate),d=b.getChannelData(0);
+  for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+  AU.noiseBuf=b;
+  const src=AU.ctx.createBufferSource();src.buffer=b;src.loop=true;
+  const f=AU.ctx.createBiquadFilter();f.type='bandpass';f.frequency.value=900;f.Q.value=.6;
+  const g=AU.ctx.createGain();g.gain.value=0;src.connect(f);f.connect(g);g.connect(AU.master);src.start();
+  AU.nGain=g;AU.nFilt=f;
+}
+function setStatic(l,fq){if(!AU.ctx)return;AU.nGain.gain.setTargetAtTime(l,AU.ctx.currentTime,.06);if(fq)AU.nFilt.frequency.setTargetAtTime(fq,AU.ctx.currentTime,.08);}
+function blip(f0=740,f1=560,d=.09,v=.05){if(!AU.ctx)return;const t=AU.ctx.currentTime,o=AU.ctx.createOscillator(),g=AU.ctx.createGain();o.type='sine';o.frequency.setValueAtTime(f0,t);o.frequency.exponentialRampToValueAtTime(Math.max(f1,1),t+d);g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(g);g.connect(AU.master);o.start(t);o.stop(t+d+.02);}
+function keySnd(){blip(rnd(1400,2500),rnd(700,1100),.03,.028);}
+function thud(){if(!AU.ctx)return;const t=AU.ctx.currentTime,o=AU.ctx.createOscillator(),g=AU.ctx.createGain();o.type='sine';o.frequency.setValueAtTime(82,t);o.frequency.exponentialRampToValueAtTime(38,t+.28);g.gain.setValueAtTime(.22,t);g.gain.exponentialRampToValueAtTime(.0001,t+.32);o.connect(g);g.connect(AU.master);o.start(t);o.stop(t+.36);}
+function chirp(){blip(660,650,.07,.05);setTimeout(()=>blip(440,430,.09,.05),95);}
+function screamOn(){
+  if(!AU.ctx||AU.scream)return;
+  const t=AU.ctx.currentTime,g=AU.ctx.createGain();g.gain.value=0;
+  const bp=AU.ctx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=950;bp.Q.value=.7;
+  const trem=AU.ctx.createGain();
+  const lfo=AU.ctx.createOscillator(),lg=AU.ctx.createGain();lfo.frequency.value=6.5;lg.gain.value=.32;lfo.connect(lg);lg.connect(trem.gain);lfo.start();
+  bp.connect(trem);trem.connect(g);g.connect(AU.master);
+  const oscs=[lfo];
+  const base=[196,220,233,262,294,311,349,392,466];
+  for(let i=0;i<9;i++){
+    const o=AU.ctx.createOscillator();o.type=i%3?'sawtooth':'triangle';
+    o.frequency.value=base[i]*rnd(.97,1.03);
+    const vib=AU.ctx.createOscillator(),vg=AU.ctx.createGain();
+    vib.frequency.value=rnd(.2,.7);vg.gain.value=rnd(4,26);vib.connect(vg);vg.connect(o.detune);vib.start();
+    const og=AU.ctx.createGain();og.gain.value=rnd(.05,.11);o.connect(og);og.connect(bp);o.start();
+    oscs.push(o,vib);
+  }
+  const air=AU.ctx.createBufferSource();air.buffer=AU.noiseBuf;air.loop=true;
+  const af=AU.ctx.createBiquadFilter();af.type='highpass';af.frequency.value=2800;
+  const ag=AU.ctx.createGain();ag.gain.value=.04;air.connect(af);af.connect(ag);ag.connect(g);air.start();
+  oscs.push(air);
+  g.gain.setTargetAtTime(.09,t,1.4);
+  AU.scream={g,oscs};
+}
+function screamDuck(down){if(!AU.scream)return;const t=AU.ctx.currentTime;AU.scream.g.gain.cancelScheduledValues(t);AU.scream.g.gain.setTargetAtTime(down?.006:.16,t,down?.06:.9);}
+function screamOff(){if(!AU.scream)return;const t=AU.ctx.currentTime;AU.scream.g.gain.setTargetAtTime(0,t,.25);const s=AU.scream;AU.scream=null;setTimeout(()=>s.oscs.forEach(o=>{try{o.stop()}catch(e){}}),1200);}
+
+/* ---------------- avatars ---------------- */
+const avJobs=[];
+function paintAvatar(cv,kind,frame){
+  const x=cv.getContext('2d'),w=cv.width,h=cv.height;
+  x.clearRect(0,0,w,h);
+  const bg=(c)=>{x.fillStyle=c;x.fillRect(0,0,w,h);};
+  const dot=(cx,cy,r,c)=>{x.fillStyle=c;x.beginPath();x.arc(cx,cy,r,0,7);x.fill();};
+  if(kind==='moon'){bg('#1a2430');dot(38,38,24,'#d8d2b8');dot(48,34,20,'#1a2430');dot(30,42,3,'#b3ac8e');dot(24,30,2,'#b3ac8e');}
+  else if(kind==='candle'){bg('#243b36');x.fillStyle='#e6dcc0';x.fillRect(28,34,16,26);x.fillStyle='#33565c';x.fillRect(28,44,16,4);x.strokeStyle='#4a3f2c';x.lineWidth=2;x.beginPath();x.moveTo(36,34);x.lineTo(36,29);x.stroke();
+    const fy=frame%2?0:2;dot(36,22+fy,6,'#e8a33c');dot(36,23+fy,3,'#f6d67a');}
+  else if(kind==='skull'){bg('#2a251d');x.fillStyle='#ded8c0';x.fillRect(18,10,36,32);x.fillRect(24,42,24,14);
+    x.fillStyle='#2a251d';dot(28,26,5,'#2a251d');dot(44,26,5,'#2a251d');x.fillRect(26,46,3,8);x.fillRect(32,46,3,8);x.fillRect(38,46,3,8);x.fillRect(44,46,3,8);}
+  else if(kind==='vhs'){bg('#20201d');x.fillStyle='#3c3e38';x.fillRect(8,18,56,30);x.fillStyle='#ded8c0';x.fillRect(12,22,48,10);
+    x.fillStyle='#20201d';x.beginPath();x.arc(24,36,5,0,7);x.fill();x.beginPath();x.arc(48,36,5,0,7);x.fill();}
+  else if(kind==='ship'){bg('#10201b');x.fillStyle='#cfc49e';x.beginPath();x.moveTo(20,14);x.lineTo(20,40);x.lineTo(44,40);x.closePath();x.fill();
+    x.strokeStyle='#181008';x.lineWidth=2;x.beginPath();x.moveTo(20,8);x.lineTo(20,46);x.stroke();
+    x.fillStyle='#241a10';x.fillRect(8,46,48,12);dot(20,52,2,'#d8c87a');dot(32,52,2,'#d8c87a');dot(44,52,2,'#d8c87a');}
+  else if(kind==='teddy'){bg('#d9cfae');dot(24,16,5,'#6b4a2a');dot(48,16,5,'#6b4a2a');dot(36,24,14,'#7a5533');dot(31,21,2,'#20180f');dot(41,21,2,'#20180f');x.strokeStyle='#20180f';x.lineWidth=2;x.beginPath();x.arc(36,28,5,.2,Math.PI-.2);x.stroke();}
+  else if(kind==='static'){const d=x.createImageData(w,h);for(let i=0;i<d.data.length;i+=4){const v=Math.random()*255;d.data[i]=d.data[i+1]=d.data[i+2]=v;d.data[i+3]=255;}x.putImageData(d,0,0);}
+}
+function avatarCanvas(kind,animate){
+  const cv=document.createElement('canvas');cv.width=cv.height=72;paintAvatar(cv,kind,0);
+  if(animate){let f=0;const iv=setInterval(()=>{if(!cv.isConnected){clearInterval(iv);return;}paintAvatar(cv,kind,f++);},260);avJobs.push(iv);}
+  return cv;
+}
+
+/* ---------------- canvas frame painters ---------------- */
+function makeCanvas(w,h){const c=document.createElement('canvas');c.width=w;c.height=h;return c;}
+function analogize(src){
+  const w=src.width,h=src.height,c=makeCanvas(w,h),x=c.getContext('2d');
+  x.fillStyle='#000';x.fillRect(0,0,w,h);
+  x.globalAlpha=.92;x.drawImage(src,0,0);
+  x.globalAlpha=.22;x.filter='sepia(1) saturate(3) hue-rotate(-45deg)';x.drawImage(src,3,0);
+  x.filter='sepia(1) saturate(2) hue-rotate(140deg)';x.drawImage(src,-3,1);
+  x.filter='none';x.globalAlpha=1;
+  x.fillStyle='rgba(0,0,0,.16)';for(let y=0;y<h;y+=3)x.fillRect(0,y,w,1);
+  for(let i=0;i<900;i++){x.fillStyle=Math.random()<.5?'rgba(255,255,255,.22)':'rgba(0,0,0,.3)';x.fillRect(Math.random()*w,Math.random()*h,1.5,1);}
+  const g=x.createRadialGradient(w/2,h/2,h*.35,w/2,h/2,h*.78);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(1,'rgba(8,6,3,.55)');x.fillStyle=g;x.fillRect(0,0,w,h);
+  return c;
+}
+function drawPromo(x,w,h){
+  x.fillStyle='#12262b';x.fillRect(0,0,w,h);
+  x.fillStyle='#cfc9a8';for(let i=0;i<40;i++)x.globalAlpha=rnd(.2,.7),x.fillRect(Math.random()*w,Math.random()*h*.5,1.5,1.5);x.globalAlpha=1;
+  dot=(cx,cy,r,c)=>{x.fillStyle=c;x.beginPath();x.arc(cx,cy,r,0,7);x.fill();};
+  dot(w*.74,h*.26,52,'#ded8b8');dot(w*.72,h*.24,9,'#c8c09a');dot(w*.76,h*.29,6,'#c8c09a');dot(w*.71,h*.29,4,'#c8c09a');
+  x.fillStyle='#0a1a20';x.fillRect(0,h*.62,w,h*.38);
+  x.strokeStyle='#1e3c42';x.lineWidth=2;
+  for(let r=0;r<12;r++){x.beginPath();for(let px=0;px<=w;px+=8)x.lineTo(px,h*.64+r*11+Math.sin(px*.03+r)*3);x.stroke();}
+  const dx=w*.4,dy=h*.62;
+  x.fillStyle='#1c130a';x.beginPath();x.moveTo(dx-130,dy);x.lineTo(dx+130,dy);x.lineTo(dx+100,dy+44);x.lineTo(dx-104,dy+44);x.closePath();x.fill();
+  x.fillStyle='#d8c87a';dot(dx-60,dy+20,4,'#d8c87a');dot(dx-10,dy+22,4,'#d8c87a');dot(dx+42,dy+20,4,'#d8c87a');
+  x.strokeStyle='#140d06';x.lineWidth=5;x.beginPath();x.moveTo(dx-40,dy);x.lineTo(dx-40,dy-150);x.moveTo(dx+52,dy);x.lineTo(dx+52,dy-110);x.stroke();
+  x.fillStyle='#cfc49e';x.beginPath();x.moveTo(dx-38,dy-146);x.lineTo(dx-108,dy-58);x.lineTo(dx-38,dy-58);x.closePath();x.fill();
+  x.fillStyle='#c4b88e';x.beginPath();x.moveTo(dx+50,dy-106);x.lineTo(dx+108,dy-30);x.lineTo(dx+50,dy-30);x.closePath();x.fill();
+  x.fillStyle='#8a2020';x.beginPath();x.moveTo(dx-40,dy-150);x.lineTo(dx-12,dy-142);x.lineTo(dx-40,dy-132);x.closePath();x.fill();
+  x.fillStyle='#0c0a08';dot(dx+6,dy-14,7,'#0c0a08');x.fillRect(dx+1,dy-8,10,16);
+  x.strokeStyle='#0c0a08';x.lineWidth=3;x.beginPath();x.moveTo(dx+6,dy-8);x.lineTo(dx-6,dy+2);x.moveTo(dx+6,dy-8);x.lineTo(dx+18,dy+2);x.stroke();
+  const g=x.createRadialGradient(dx+6,dy-26,1,dx+6,dy-26,26);g.addColorStop(0,'rgba(238,178,80,.5)');g.addColorStop(1,'rgba(238,178,80,0)');x.fillStyle=g;x.fillRect(dx-22,dy-54,58,58);
+  dot(dx+6,dy-26,3.4,'#f2c06a');
+  x.fillStyle='#d8c87a';x.font='bold 46px Georgia';x.fillText('CANDLE COVE',36,74);
+  x.fillStyle='#8fa38f';x.font='15px Georgia';x.fillText('W E E K D A Y S   4 : 3 0   ·   C H A N N E L   1 2',38,102);
+}
+function drawPercy(x,w,h){
+  x.fillStyle='#0d1a15';x.fillRect(0,0,w,h);
+  for(let px=0;px<w;px+=44){x.fillStyle='rgba(255,255,255,.03)';x.fillRect(px,0,20,h);}
+  x.fillStyle='rgba(220,210,180,.05)';x.fillRect(w-160,h-220,160,220);
+  const cx=w/2,cy=h/2-14,R=138;
+  x.fillStyle='#c9bd9c';x.beginPath();x.ellipse(cx,cy,R,R*1.08,0,0,7);x.fill();
+  x.fillStyle='#22201a';x.beginPath();x.moveTo(cx-R-34,cy-R*.42);x.quadraticCurveTo(cx,cy-R*1.78,cx+R+34,cy-R*.42);x.quadraticCurveTo(cx,cy-R*.8,cx-R-34,cy-R*.42);x.fill();
+  const eye=(ex,ey)=>{
+    x.fillStyle='#e8e2cf';x.beginPath();x.ellipse(ex,ey,29,33,0,0,7);x.fill();
+    x.strokeStyle='rgba(60,50,30,.5)';x.lineWidth=2;x.stroke();
+    x.fillStyle='#141210';x.beginPath();x.arc(ex-7,ey+8,7,0,7);x.fill();
+    x.strokeStyle='rgba(80,60,40,.6)';x.beginPath();x.arc(ex,ey+20,25,.2,Math.PI-.2);x.stroke();
+  };
+  eye(cx-52,cy-32);eye(cx+52,cy-32);
+  x.strokeStyle='rgba(90,70,40,.7)';x.lineWidth=3;x.beginPath();x.moveTo(cx-4,cy-2);x.quadraticCurveTo(cx+9,cy+24,cx-6,cy+32);x.stroke();
+  x.fillStyle='#4a4136';x.beginPath();x.ellipse(cx,cy+120,118,84,0,0,7);x.fill();
+  x.fillStyle='#171310';x.beginPath();x.ellipse(cx,cy+70,45,32,0,0,7);x.fill();
+  x.fillStyle='#d8d0b4';for(let i=0;i<6;i++)x.fillRect(cx-36+i*13,cy+46,9,9);
+  x.strokeStyle='rgba(40,30,20,.55)';x.lineWidth=2;x.beginPath();x.moveTo(cx-R-8,cy+40);x.quadraticCurveTo(cx,cy+30,cx+R+8,cy+40);x.stroke();
+  for(let i=-4;i<=4;i++){x.beginPath();x.moveTo(cx+i*30,cy+34);x.lineTo(cx+i*30+6,cy+46);x.stroke();}
+  x.fillStyle='#d8c87a';x.font='bold 18px Courier New';x.fillText('WLLV 12',w-108,34);
+  x.fillStyle='#0a0c0a';
+  x.beginPath();x.arc(96,h-84,17,0,7);x.fill();
+  x.beginPath();x.ellipse(96,h-42,26,30,0,0,7);x.fill();
+}
+function crayStroke(x,pts,color,wd){
+  x.strokeStyle=color;x.lineCap='round';x.lineJoin='round';
+  for(let k=0;k<2;k++){x.globalAlpha=.35+k*.28;x.lineWidth=wd*(1-k*.45);x.beginPath();
+    pts.forEach((p,i)=>{const jx=p[0]+rnd(-2,2),jy=p[1]+rnd(-2,2);i?x.lineTo(jx,jy):x.moveTo(jx,jy);});x.stroke();}
+  x.globalAlpha=1;
+}
+function crayText(x,str,cx,cy,size,color){
+  x.font='bold '+size+'px Georgia';x.fillStyle=color;
+  let px=cx-str.length*size*.42;
+  for(const ch of str){x.save();x.translate(px,cy);x.rotate(rnd(-.09,.09));x.globalAlpha=.85;x.fillText(ch,0,0);x.globalAlpha=.4;x.fillText(ch,1.5,1);x.restore();px+=size*.72;}
+}
+function drawCrayon(x,w,h,who){
+  x.fillStyle='#f4ecd8';x.fillRect(0,0,w,h);
+  crayStroke(x,[[16,16],[w-16,16],[w-16,h-16],[16,h-16],[16,16]],'#3a6ea5',5);
+  for(let r=0;r<8;r++)for(let i=0;i<10;i++){const sx=30+Math.random()*(w*.55),sy=26+r*16;crayStroke(x,[[sx,sy],[sx+rnd(14,30),sy+rnd(-6,6)]],'#5a4a7a',6);}
+  dot=(cx,cy,r,c)=>{x.globalAlpha=.8;x.fillStyle=c;x.beginPath();x.arc(cx,cy,r,0,7);x.fill();x.globalAlpha=1;};
+  dot(w*.8,h*.18,26,'#e8e0c0');
+  crayStroke(x,[[w*.3,h*.6],[w*.68,h*.58],[w*.62,h*.72],[w*.35,h*.74],[w*.3,h*.6]],'#7a4a21',7);
+  x.globalAlpha=.4;x.fillStyle='#7a4a21';x.beginPath();x.moveTo(w*.3,h*.6);x.lineTo(w*.68,h*.58);x.lineTo(w*.62,h*.72);x.lineTo(w*.35,h*.74);x.closePath();x.fill();x.globalAlpha=1;
+  x.strokeStyle='#241a10';x.lineWidth=5;
+  x.beginPath();x.moveTo(w*.42,h*.6);x.lineTo(w*.42,h*.3);x.moveTo(w*.58,h*.58);x.lineTo(w*.58,h*.36);x.stroke();
+  x.globalAlpha=.6;x.fillStyle='#e3c76a';
+  x.beginPath();x.moveTo(w*.43,h*.32);x.lineTo(w*.30,h*.52);x.lineTo(w*.43,h*.52);x.closePath();x.fill();
+  x.beginPath();x.moveTo(w*.57,h*.38);x.lineTo(w*.66,h*.52);x.lineTo(w*.57,h*.52);x.closePath();x.fill();x.globalAlpha=1;
+  crayStroke(x,[[w*.59,h*.32],[w*.66,h*.3]],'#8a2020',5);
+  for(let r=0;r<5;r++)for(let i=0;i<12;i++){const sx=w*.2+Math.random()*w*.6,sy=h*.76+r*9;crayStroke(x,[[sx,sy],[sx+rnd(16,30),sy+rnd(-4,4)]],'#3a6ea5',5);}
+  const stick=(sx,sy,sc,col,label,hat)=>{
+    x.strokeStyle=col;x.lineWidth=3;
+    x.beginPath();x.arc(sx,sy-26*sc,9*sc,0,7);x.stroke();
+    x.beginPath();x.moveTo(sx,sy-17*sc);x.lineTo(sx,sy+8*sc);x.moveTo(sx,sy-10*sc);x.lineTo(sx-11*sc,sy+2*sc);x.moveTo(sx,sy-10*sc);x.lineTo(sx+11*sc,sy+2*sc);
+    x.moveTo(sx,sy+8*sc);x.lineTo(sx-8*sc,sy+24*sc);x.moveTo(sx,sy+8*sc);x.lineTo(sx+8*sc,sy+24*sc);x.stroke();
+    if(hat==='tri'){crayStroke(x,[[sx-14*sc,sy-34*sc],[sx+14*sc,sy-34*sc],[sx,sy-52*sc],[sx-14*sc,sy-34*sc]],col,4);}
+    if(hat==='top'){x.fillStyle=col;x.fillRect(sx-9*sc,sy-56*sc,18*sc,16*sc);x.fillRect(sx-14*sc,sy-42*sc,28*sc,4*sc);}
+    if(label)crayText(x,label,sx,sy+24*sc+16,13,col);
+  };
+  stick(w*.36,h*.5,1,'#241a10','PERCY','tri');
+  stick(w*.52,h*.49,1,'#241a10','SKIN-TAKER','top');
+  stick(w*.45,h*.55,.75,'#241a10','JANICE');
+  stick(w*.47,h*.62,.8,'#241a10','ME (JULIUS)');
+  const nx=w*.84,ny=h*.66;
+  x.strokeStyle='#241a10';x.lineWidth=2;x.setLineDash([7,7]);
+  x.beginPath();x.moveTo(w*.72,h*.9);x.lineTo(nx,ny+20);x.stroke();x.setLineDash([]);
+  x.fillStyle='#241a10';x.fillRect(nx-26,ny+56,52,40);x.strokeStyle='#241a10';x.strokeRect(nx-26,ny+56,52,40);
+  x.beginPath();x.moveTo(nx-10,ny+56);x.lineTo(nx-18,ny+44);x.moveTo(nx+10,ny+56);x.lineTo(nx+18,ny+44);x.stroke();
+  crayText(x,'MY TV',nx,ny+112,11,'#241a10');
+  stick(nx,ny,1.15,'#8a2020',esc(who).toUpperCase());
+  crayText(x,'the new friend',nx,ny-58,12,'#8a2020');
+  crayText(x,'CANDLE COVE',w/2,52,20,'#8a2020');
+  crayText(x,'HE CAME TO PLAY',w/2,h-42,22,'#241a10');
+}
+function drawMini(x,kind,cx,cy,s,jaw,look,alpha){
+  x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.scale(s,s);
+  const bone=kind==='skin';
+  x.fillStyle=bone?'#d6d0bc':'#c9bd9c';x.beginPath();x.ellipse(0,0,64,70,0,0,7);x.fill();
+  if(kind==='percy'){
+    x.fillStyle='#22201a';x.beginPath();x.moveTo(-92,-26);x.quadraticCurveTo(0,-118,92,-26);x.quadraticCurveTo(0,-50,-92,-26);x.fill();
+    x.fillStyle='#4a4136';x.beginPath();x.ellipse(0,56,54,38,0,0,7);x.fill();
+  }
+  if(kind==='skin'){
+    x.fillStyle='#14120e';x.fillRect(-34,-92,68,40);x.fillRect(-46,-56,92,8);
+    x.fillStyle='#14120e';x.beginPath();x.ellipse(-24,-14,15,19,0,0,7);x.fill();x.beginPath();x.ellipse(24,-14,15,19,0,0,7);x.fill();
+    x.fillStyle='#e8e2cf';dot=(a,b,r)=>{x.beginPath();x.arc(a,b,r,0,7);x.fill();};dot(-24+look*6,-12,3.5);dot(24+look*6,-12,3.5);
+  }else{
+    x.fillStyle='#e8e2cf';x.beginPath();x.ellipse(-23,-16,14,17,0,0,7);x.fill();x.beginPath();x.ellipse(23,-16,14,17,0,0,7);x.fill();
+    x.fillStyle='#141210';x.beginPath();x.arc(-23+look*7,-13,4.5,0,7);x.fill();x.beginPath();x.arc(23+look*7,-13,4.5,0,7);x.fill();
+  }
+  if(kind==='janice'){x.fillStyle='#3a2c1a';x.beginPath();x.arc(0,-14,56,Math.PI*1.05,Math.PI*1.95);x.fill();x.fillRect(-56,-20,14,34);x.fillRect(42,-20,14,34);}
+  const mh=6+jaw*26;
+  x.fillStyle='#171310';x.beginPath();x.ellipse(0,30+mh*.4,26,mh,0,0,7);x.fill();
+  if(kind==='skin'){x.fillStyle='#d6d0bc';for(let i=-3;i<=3;i++)x.fillRect(i*8-3,30-mh*.5,6,mh);}
+  x.restore();
+}
+const FRAMES={promo:drawPromo,ep12:drawPercy,draw:drawCrayon};
+
+/* ---------------- generic helpers ---------------- */
+function toast(msg,ms=2800){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms);}
+function busy(txt){const e=$('#sact');e.textContent=txt||'idle';e.classList.toggle('busy',!!txt);}
+function setCor(v){
+  state.cor=v;const sig=Math.round(100-v*100);
+  const k=clamp(Math.round(sig/10),0,10);
+  $('#sigblk').textContent='█'.repeat(k)+'░'.repeat(10-k);
+  $('#sigpct').textContent=sig+'%';
+  $('#kbps').textContent=sig>=80?'24.0 kbps':sig>=60?'21.6 kbps':sig>=40?'18.9 kbps':sig>=25?'12.2 kbps':sig>=10?'3.1 kbps':'0.3 kbps';
+  const w=$('#wrap');w.classList.toggle('c2',v>=.52);w.classList.toggle('c3',v>=.75);
+  $('#candlesvg').classList.toggle('gutter',v>=.52&&v<.75);
+  $('#candlesvg').classList.toggle('out',v>=.75);
+  if(v>=.75)makeFavicon(true);
+}
+function userColor(u){return u.color;}
+function nowStamp(){const d=new Date();return d.toLocaleString(undefined,{month:'2-digit',day:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'});}
+function nearBottom(){return window.innerHeight+window.scrollY>document.body.scrollHeight-260;}
+function follow(){setTimeout(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}),60);}
+let chipN=0;
+function maybeChip(who){
+  if(nearBottom()){follow();return;}
+  chipN++;const c=$('#chip');c.textContent='▼ '+chipN+' new repl'+(chipN>1?'ies':'y')+' — '+who;c.classList.remove('hidden');
+}
+ $('#chip').addEventListener('click',()=>{chipN=0;$('#chip').classList.add('hidden');window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});});
+
+/* ---------------- users & posts ---------------- */
+const USERS={
+  sky:{name:'skyshale034',rank:'senior member',stars:4,posts:'1,204',joined:'Mar 2004',color:'#1f5f6b',av:'moon',sig:'— my tapes for trade · VHS-C · betamax · unknown formats —'},
+  meat:{name:'meatchan',rank:'member',stars:2,posts:'312',joined:'Jan 2005',color:'#7a2d4e',av:'candle',sig:'come sail away ☆'},
+  joker:{name:'Jokersyberg',rank:'member',stars:2,posts:'87',joined:'Aug 2006',color:'#9a5b12',av:'skull',sig:'proud dad of one.'},
+  dan:{name:'tapeswap_Dan',rank:'junior member',stars:1,posts:'9',joined:'Apr 2007',color:'#5b6b1f',av:'vhs',sig:'converting since 2004'},
+  me:{name:'',rank:'recovered user',stars:0,posts:'0',joined:'today',color:'#8a6a1e',av:'static',sig:''},
+  julius:{name:'julius',rank:'new friend',stars:0,posts:'0',joined:'today',color:'#3a7a35',av:'teddy',sig:''},
+  percy:{name:'Percy',rank:'captain',stars:5,posts:'30',joined:'Oct 1971',color:'#8a2020',av:'ship',sig:''}
+};
+function N(){return esc(state.name);}
+function body(html){return html.replace(/{{N}}/g,N());}
+
+let postNo=0;
+function post(userKey,time,rawBody,opts={}){
+  const u=USERS[userKey];
+  postNo++;
+  const el=document.createElement('article');el.className='post cut';
+  const num=state.cor>.75&&Math.random()<.35?'#22:47':'#'+postNo;
+  el.innerHTML=
+    '<div class="phead"><span>'+esc(u.name)+(opts.subject?' · <i>'+esc(opts.subject)+'</i>':'')+'</span>'+
+    '<span class="ph2">'+time+' <span style="opacity:.7">'+num+'</span></span></div>'+
+    '<div class="pbody"><div class="pside"><div class="pinfo"></div></div>'+
+    '<div class="pmain"><div class="body">'+body(rawBody)+'</div><div class="pfoot">'+
+    '<a data-toast="permalink lost — the archive did not capture it">permalink</a>'+
+    '<a data-toast="private messages were not archived. whatever they said is lost forever.">private message</a>'+
+    '<a data-toast="quotes were not archived. memory will have to do.">quote</a></div>'+
+    (u.sig?'<div class="psig sig-'+userKey+'">'+body(u.sig)+'</div>':'')+'</div></div>';
+  const info=el.querySelector('.pinfo');
+  info.appendChild(avatarCanvas(u.av,u.av==='candle'||u.av==='static'));
+  const un=document.createElement('a');un.className='un';un.style.color=userColor(u);un.textContent=u.name;
+  un.addEventListener('click',()=>toast('profile of '+u.name+' — recovered fields: joined, posts, rank. all other fields: [lost].'));
+  info.appendChild(un);
+  info.insertAdjacentHTML('beforeend','<div class="rk">'+u.rank+'</div><div class="stars">'+'★'.repeat(u.stars)+'</div>'+
+    '<div class="pm">posts: '+u.posts+'<br>joined: '+u.joined+'</div>');
+  if(opts.att)el.querySelector('.body').appendChild(opts.att);
+  $('#posts').appendChild(el);
+  maybeChip(u.name);
+  if(state.cor>=.28)glitchEl(pick($$('.pmain .body')));
+  blip();
+  const tv=$('#tviews');if(tv)tv.textContent='4,'+(182+postNo);
+  const tr=$('#treplies');if(tr)tr.textContent=(27+postNo);
+  return el;
+}
+function stamp(txt,cls,tag){
+  const el=document.createElement('div');el.className='stamp'+(cls?' '+cls:'');
+  el.innerHTML=(tag?'<span class="tag">'+tag+'</span>':'')+body(txt);
+  $('#posts').appendChild(el);maybeChip('the archive');return el;
+}
+function postPlayer(txt,timeLabel){
+  return post('me',timeLabel||nowStamp()+' — just now',esc(txt),{subject:'re: does anyone else remember candle cove?'});
+}
+function brokenAtt(attId,file,size){
+  const el=document.createElement('div');el.className='att broken';
+  el.innerHTML='<b>'+esc(file)+'</b> ('+size+')<br><span class="fnot">STATUS: NOT RECOVERED — the file was lost before the snapshot was taken.</span><br>'+
+    '<button class="btn attbtn">attempt recovery</button>';
+  const btn=el.querySelector('button');
+  btn.addEventListener('click',async()=>{
+    if(btn.disabled)return;
+    btn.disabled=true;btn.textContent='RECEIVING…';
+    const url=await openTuner(attId);
+    if(!url){btn.disabled=false;btn.textContent='attempt recovery';toast('recovery abandoned — the file remains lost.');return;}
+    state.rec[attId]=true;
+    const fb=document.createElement('div');fb.className='framebox';
+    fb.innerHTML='<img src="'+url+'" alt="recovered frame"><span class="ts">1971</span>';
+    fb.insertAdjacentHTML('beforeend','');
+    const cap=document.createElement('div');cap.className='attcap';cap.innerHTML='RECOVERED BY: '+N()+' · LOST MEDIA FOUNDATION · integrity: partial';
+    el.classList.remove('broken','pulse');el.innerHTML='';el.appendChild(fb);el.appendChild(cap);
+    stamp(ANN[attId],'dim');
+    chirp();
+    const w=state.recWait[attId];if(w){delete state.recWait[attId];w();}
+  });
+  state.attEls[attId]=el;return el;
+}
+function ensureRec(attId,nudged){
+  if(state.rec[attId])return sleep(300);
+  return new Promise(res=>{
+    state.recWait[attId]=res;
+    const el=state.attEls[attId];el.classList.add('pulse');
+    if(!nudged){stamp('ARCHIVE NOTE: the remainder of the snapshot is withheld until this attachment is recovered.','dim');}
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+}
+function draftCard(title,note,opts){
+  return new Promise(res=>{
+    const el=document.createElement('div');el.className='draft';
+    el.innerHTML='<div class="dh">'+body(title)+'</div><div class="db"><p>'+body(note)+'</p></div>';
+    const db=el.querySelector('.db');
+    opts.forEach((o,i)=>{
+      const b=document.createElement('button');b.className='dopt';b.innerHTML=body(o.label);
+      b.addEventListener('click',()=>{
+        if(el.dataset.done)return;el.dataset.done=1;
+        db.innerHTML='<p style="margin:0;color:#5d1c1c;font-family:\'Special Elite\',monospace">› draft committed to thread. the archive thanks you for your memory.</p>';
+        res(i);
+      });
+      db.appendChild(b);
+    });
+    $('#posts').appendChild(el);
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+}
+
+/* ---------------- tuner ---------------- */
+function openTuner(frameKey){
+  return new Promise(res=>{
+    const ov=$('#tuner'),cv=$('#tvc'),x=cv.getContext('2d');
+    const dial=$('#dial'),dval=$('#dialval'),tstat=$('#tstat'),tpct=$('#tpct');
+    let frame=null;
+    if(FRAMES[frameKey]){const src=makeCanvas(640,420);FRAMES[frameKey](src.getContext('2d'),640,420,state.name);frame=analogize(src);}
+    const target=rnd(24,76);dial.value=0;
+    let sig=0,hold=0,last=performance.now(),raf=0,done=false;
+    const nz=makeCanvas(160,105),nx=nz.getContext('2d');
+    const noise=(a)=>{
+      const id=nx.createImageData(160,105);
+      for(let i=0;i<id.data.length;i+=4){const v=Math.random()<a?Math.random()*255:0;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255;}
+      nx.putImageData(id,0,0);
+      x.imageSmoothingEnabled=false;x.drawImage(nz,0,0,640,420);
+    };
+    ov.classList.remove('hidden');dial.focus();
+    setStatic(.14,700);
+    tstat.textContent='NO SIGNAL — move TRACKING until the frame resolves';tpct.textContent='SIGNAL 0%';
+    function loop(t){
+      const dt=Math.min(.05,(t-last)/1000);last=t;
+      const v=+dial.value;dval.textContent=v.toFixed(1);
+      const d=Math.abs(v-target);
+      const target_sig=clamp(1-d/6,0,1);
+      sig+= (target_sig-sig)*Math.min(1,dt*9);
+      x.fillStyle='#000';x.fillRect(0,0,640,420);
+      if(frame){
+        const fa=Math.pow(sig,1.6);
+        if(fa>0.02||Math.random()<.008){
+          x.globalAlpha=Math.max(fa,Math.random()<.008?.85:0);
+          x.drawImage(frame,0,0);x.globalAlpha=1;
+        }
+      }
+      noise(.55+(1-sig)*.4);
+      x.fillStyle='rgba(0,0,0,.15)';for(let y=0;y<420;y+=3)x.fillRect(0,y,640,1);
+      setStatic(.02+(1-sig)*.13,300+sig*5200);
+      tpct.textContent='SIGNAL '+Math.round(sig*100)+'%';
+      if(sig>.82){
+        hold+=dt;
+        tstat.textContent='SIGNAL LOCKED — DEMODULATING '+Math.min(100,Math.round(hold/1.9*100))+'%';
+        if(hold>1.9&&!done){done=true;finish();}
+      }else{
+        hold=Math.max(0,hold-dt*2);
+        tstat.textContent=sig>.4?'CARRIER FOUND — hold TRACKING steady':'NO SIGNAL — move TRACKING until the frame resolves';
+      }
+      if(!done)raf=requestAnimationFrame(loop);
+    }
+    function finish(){
+      setStatic(0);thud();chirp();
+      tstat.textContent='RECOVERED.';
+      const url=frame?frame.toDataURL('image/png'):null;
+      setTimeout(()=>{cancelAnimationFrame(raf);ov.classList.add('hidden');res(url);},750);
+    }
+    function onAbort(){if(done)return;done=true;cancelAnimationFrame(raf);setStatic(0);ov.classList.add('hidden');res(null);}
+    $('#tabandon').onclick=onAbort;
+    const esc2=e=>{if(e.key==='Escape'){onAbort();document.removeEventListener('keydown',esc2);}};
+    document.addEventListener('keydown',esc2);
+    cancelAnimationFrame(raf);raf=requestAnimationFrame(loop);
+  });
+}
+
+/* ---------------- who's online / statusbar ---------------- */
+function setOnline(entries,guestsLabel){
+  const w=$('#whobox');if(!w)return;
+  w.innerHTML='Users browsing this thread: '+entries.map(e=>{
+    const cls=e.you?'you':e.off?'off':e.percy?'percy':'on';
+    return '<span class="'+cls+'">'+esc(e.n)+(e.you?' (you)':'')+'</span>';
+  }).join(', ')+(guestsLabel?', '+guestsLabel:'');
+}
+
+/* ---------------- glitch ambient ---------------- */
+const TITLES=['come and play','the tv is not plugged in','22:47','who is percy','you are already in it','he came to play'];
+const baseTitle=document.title;
+function glitchEl(el){
+  if(!el)return;el.classList.add('rgbsplit');setTimeout(()=>el.classList.remove('rgbsplit'),rnd(120,260));
+}
+function glitchTick(){
+  const c=state.cor;
+  if(c<.25)return;
+  if(Math.random()<.4+c*.3){
+    const r=Math.random();
+    if(r<.3){glitchEl(pick($$('.pmain .body')));}
+    else if(r<.5){const o=document.title;document.title=pick(TITLES);setTimeout(()=>document.title=state.ended?o:baseTitle,1500);}
+    else if(r<.65){const w=$('#wrap');w.style.transform='translate('+rnd(-2,2)+'px,'+rnd(-1,1)+'px)';setTimeout(()=>w.style.transform='',120);}
+    else if(r<.8&&c>=.5){const uns=$$('.pside .un');if(uns.length){const u=pick(uns),t=u.textContent;u.textContent=c>=.75?'Percy':pick(['meatchan','skyshale034','julius','Percy']);setTimeout(()=>u.textContent=t,rnd(150,420));}}
+    else if(r<.9&&c>=.5){const f=$('#flash');f.style.opacity=.05;setTimeout(()=>f.style.opacity=0,70);blip(220,180,.12,.02);}
+    else if(c>=.75){const ts=$$('.ts');if(ts.length)pick(ts).textContent=nowStamp();setTimeout(()=>{const ts2=$$('.ts');if(ts2.length)pick(ts2).textContent='1971';},300);}
+  }
+  const tick=$('#ticker');
+  if(c>=.75&&Math.random()<.15)tick.textContent='ARCHIVE MODE · snapshot 05/01/2007 · the snapshot is fragile · 22:47 · he can hear the page load';
+}
+setInterval(glitchTick,1100);
+
+/* hidden messages become visible on text selection */
+function sprinkleSpans(){
+  const map=[
+    ['she said,','she said there was another mother who heard it too. she never said whose house.'],
+    ['just voices.','i lied about one thing. i never asked my mom. i just remembered all of it. i don\'t know from where.'],
+    ['i never showed him anything like that.','julius asked me this morning who {{N}} is. i have never said that name out loud.']
+  ];
+  $$('#posts .pmain .body').forEach(b=>{
+    for(const[anchor,hidden]of map){
+      if(b.dataset.spDone)continue;
+      if(b.textContent.includes(anchor)){
+        b.dataset.spDone=1;
+        b.innerHTML=b.innerHTML.replace(anchor,anchor+' <span class="sp">'+body(hidden)+'</span>');
+        break;
+      }
+    }
+  });
+}
+
+/* ---------------- grain + favicon ---------------- */
+(function grain(){
+  const c=makeCanvas(128,128),x=c.getContext('2d'),id=x.createImageData(128,128);
+  for(let i=0;i<id.data.length;i+=4){const v=Math.random()*255;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=28;}
+  x.putImageData(id,0,0);
+  $('#grain').style.backgroundImage='url('+c.toDataURL()+')';
+})();
+function makeFavicon(noise){
+  const c=makeCanvas(16,16),x=c.getContext('2d');
+  if(noise){const id=x.createImageData(16,16);for(let i=0;i<id.data.length;i+=4){const v=Math.random()*255;id.data[i]=id.data[i+1]=v*.8;id.data[i+2]=v*.6;id.data[i+3]=255;}x.putImageData(id,0,0);}
+  else{x.fillStyle='#243b36';x.fillRect(0,0,16,16);x.fillStyle='#e6dcc0';x.fillRect(6,8,4,7);x.fillStyle='#e8a33c';x.fillRect(6,3,4,4);}
+  let l=document.querySelector('link[rel=icon]');if(!l){l=document.createElement('link');l.rel='icon';document.head.appendChild(l);}
+  l.href=c.toDataURL();
+}
+makeFavicon(false);
+
+/* ---------------- views ---------------- */
+function clearJobs(){avJobs.forEach(clearInterval);avJobs.length=0;}
+function wireToasts(root){
+  (root||document).querySelectorAll('[data-toast]').forEach(a=>{
+    if(a._w)return;a._w=1;
+    a.addEventListener('click',e=>{e.preventDefault();toast(a.dataset.toast||'the archive did not capture this page.');});
+  });
+}
+function renderIndex(postRun){
+  clearJobs();
+  $('#ubname').textContent=state.name||'guest';
+  $('#ublinks').innerHTML=state.name?'<b>'+esc(state.name)+'</b> · last login: <span id="lastl">'+(state.ended?'05-01-2007, 22:47':'never')+'</span>':'<a id="lreg2">register</a> · <a id="llogin2">log in</a> · archive mode';
+  $('#recrun').textContent='this page has been recovered '+((state.run||0)+1)+' time'+(state.run?'s':'')+'. the results are never identical.';
+  $('#ticker').textContent=state.ended?'snapshot integrity: compromised · the candle is out · new posts are not accepted · reason on file: "everyone is in it"'
+    :'ARCHIVE MODE · snapshot 05/01/2007, 23:12 UTC · 4 attachments failed to recover · do not refresh — the snapshot is fragile';
+  const v=$('#view');
+  v.innerHTML=
+   '<div class="catbar">netNostalgia forums — the archive</div>'+
+   '<div class="board"><div class="bd"><h3>Television · Lost &amp; Remembered</h3>'+
+   '<p>shows that may or may not have existed. be kind. memory is a group project.</p></div></div>'+
+   '<div class="thead"><div class="tt">thread / thread starter</div><div class="st">replies · views</div><div class="lp">last post</div></div>'+
+   '<div class="trow" id="tcc"><div class="tt"><span class="tagx hot">HOT</span>'+(postRun?'<span class="tagx lock">LOCKED</span>':'')+
+     '<a id="openthread"><b>Does anyone else remember CANDLE COVE? (merged ×3)</b></a><div class="sub">started by skyshale034, 05-01-2007</div></div>'+
+     '<div class="st"><span id="treplies">'+(postRun?'48':'27')+'</span> · <span id="tviews">4,182</span></div>'+
+     '<div class="lp">by '+(postRun?'<span style="color:var(--red)">Percy</span><br>just now':'Jokersyberg<br>14 years ago')+'</div></div>'+
+   (postRun?
+   '<div class="trow" id="tme"><div class="tt"><span class="tagx hot">HOT</span><a id="openme"><b>Does anyone else remember '+N()+'?</b></a><div class="sub">started by skyshale034 · moments ago</div></div>'+
+     '<div class="st">1 · 402</div><div class="lp">by <span style="color:var(--red)">Percy</span><br>just now</div></div>'+
+   '<div class="trow" id="tcandle2"><div class="tt"><a data-toast="not captured in this snapshot"><b>did the logo candle always flicker like that</b></a><div class="sub">started by meatchan · 3 minutes ago</div></div>'+
+     '<div class="st">0 · 88</div><div class="lp">—</div></div>'
+   :
+   '<div class="trow"><div class="tt"><a data-toast="not captured in this snapshot"><b>the tapeswap list — spring \'07</b></a><div class="sub">started by tapeswap_Dan, 04-14-2007</div></div><div class="st">6 · 311</div><div class="lp">by tapeswap_Dan<br>2 hours ago</div></div>'+
+   '<div class="trow"><div class="tt"><a data-toast="not captured in this snapshot"><b>eyeball world in my soup (dream diary)</b></a><div class="sub">started by meatchan, 03-02-2007</div></div><div class="st">2 · 96</div><div class="lp">by meatchan<br>1 day ago</div></div>'+
+   '<div class="trow"><div class="tt"><span class="tagx lock">LOCKED</span><a data-toast="not captured in this snapshot"><b>rule: no creepypasta postings in this board — READ FIRST</b></a><div class="sub">started by moderator_marge</div></div><div class="st">— · —</div><div class="lp">—</div></div>'
+   )+
+   '<div class="fstats">'+(postRun?'14 threads · 412 posts · newest member: <b>'+N()+'</b>':'14 threads · 412 posts · newest member: guest')+'</div>';
+  wireToasts(v);
+  const op=$('#openthread');if(op)op.addEventListener('click',()=>{state.ended?toast('ERROR: thread is locked. reason on file: "everyone is in it."'):requestName(startThread);});
+  const om=$('#openme');if(om)om.addEventListener('click',()=>{state.name?scene2():requestName(startThread);});
+  $('#logo').addEventListener('click',()=>{if(!threadRunning)renderIndex(state.ended);});
+  window.scrollTo({top:0});
+}
+function requestName(cb){
+  if(state.name){cb();return;}
+  const ov=$('#loginov'),inp=$('#nameinp'),err=$('#nameerr');
+  ov.classList.remove('hidden');inp.value=store.get('nnc_name','');err.textContent='';
+  setTimeout(()=>inp.focus(),50);
+  const ok=()=>{
+    const v=inp.value.trim();
+    if(!/^[a-z0-9_.\- ]{2,18}$/i.test(v)){err.textContent='handles may only contain letters, numbers, _ . - and spaces (2–18 chars).';return;}
+    state.name=v;store.set('nnc_name',v);
+    ov.classList.add('hidden');blip();
+    toast('handle recovered: '+v+' — last login: never.');
+    cb();
+  };
+  $('#nameok').onclick=ok;
+  inp.onkeydown=e=>{if(e.key==='Enter')ok();};
+  $('#namerand').onclick=()=>{inp.value=pick(['vhs_ghost','channel_12','tuner_kid','shale_fan','tape_hiss','late_night_kid','4_30pm','static_kid']);err.textContent='';};
+}
+ $('#lreg').addEventListener('click',()=>requestName(()=>toast('session mounted. nothing to register — the archive already has you.')));
+ $('#llogin').addEventListener('click',()=>requestName(()=>toast('session mounted. last login: never.')));
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-toast]');
+  if(a){e.preventDefault();toast(a.dataset.toast||'the archive did not capture this page.');}
+},true);
+
+/* ---------------- thread shell ---------------- */
+let threadRunning=false;
+function renderThreadShell(title,meta){
+  const v=$('#view');
+  v.innerHTML='<div class="crumbs">netNostalgia forums › Television › Lost &amp; Remembered › '+esc(title)+'</div>'+
+   '<h1 id="threadtitle">'+esc(title)+'</h1><div id="threadmeta">'+meta+'</div>'+
+   '<div id="whobox">Users browsing this thread: —</div><div id="posts"></div>'+
+   '<div id="replybox"><div class="rh">quick reply — recovered session</div><div class="rb">'+
+   '<label>subject</label><input readonly style="width:100%;font:12px Verdana;border:1px solid var(--line2);background:var(--paper3);padding:6px" value="RE: '+esc(title)+'">'+
+   '<div style="height:8px"></div><label>body</label><textarea id="rta" spellcheck="false" placeholder=""></textarea>'+
+   '<div class="rrow"><span class="rnote" id="rnote">draft cache: empty</span><button class="btn primary" id="rpost">post reply</button></div>'+
+   '</div></div>';
+  wireToasts(v);
+  postNo=0;
+  $('#rpost').addEventListener('click',onReplyAttempt);
+}
+function onReplyAttempt(){
+  const ta=$('#rta');
+  if(state.replyLock){toast('you do not have permission to post in this thread.');return;}
+  const val=ta.value.trim();
+  if(!val){toast('ERROR: empty reply. the archive refuses to store nothing. (it stores everything else.)');return;}
+  if(/^come and play\.?$/i.test(val)){
+    if(!state.ghost){
+      state.ghost=true;state.replyLock=true;
+      postPlayer('come and play.');
+      setCor(Math.min(1,state.cor+.05));
+      setTimeout(()=>{
+        post('percy','05-01-2007, 22:47','we heard you first.',{});
+        $('#rnote').textContent='draft cache: writing itself';
+        $('#replybox').classList.add('locked');
+        $('#rta').value='';$('#rta').disabled=true;
+        $('#rpost').disabled=true;$('#rpost').textContent='locked';
+        thud();
+      },2200);
+    }
+    return;
+  }
+  state.attempts++;
+  if(state.attempts===1)toast('ERROR: permission denied — you do not have permission to post in this thread.');
+  else if(state.attempts===2)toast('ERROR: permission denied — reason: you are already in it.');
+  else{toast('the draft cache is writing for you. please wait.');ghostType();}
+}
+function ghostType(){
+  const ta=$('#rta');if(!ta||ta.disabled||state.ghost)return;
+  if(ta.dataset.ghosting)return;ta.dataset.ghosting=1;
+  ta.value='';$('#rnote').textContent='draft cache: writing itself';
+  const s='come and play.';let i=0;
+  (function step(){
+    if(!ta.isConnected){return;}
+    if(i>=s.length){delete ta.dataset.ghosting;return;}
+    ta.value+=s[i++];keySnd();
+    setTimeout(step,rnd(220,650));
+  })();
+}
+setInterval(()=>{
+  if(!threadRunning||state.cor<.5)return;
+  if(Date.now()-(window._lastAct||0)>14000&&Math.random()<.35){ghostType();window._lastAct=Date.now();}
+},4000);
+['keydown','mousedown','touchstart'].forEach(ev=>document.addEventListener(ev,()=>window._lastAct=Date.now(),{passive:true}));
+
+/* ---------------- interstitial ---------------- */
+async function interstitial(){
+  const v=$('#view');
+  v.innerHTML='<div class="stamp" style="margin-top:60px" id="ii"></div>';
+  const lines=['connecting to archive node 04 …','snapshot 05-01-2007, 23:12:04 UTC …','41 attachments found …','4 failed to recover …','rendering thread. do not refresh — the snapshot is fragile.'];
+  const ii=$('#ii');ii.textContent='';
+  for(const l of lines){ii.textContent+=l+'\n';keySnd();await sleep(rnd(280,460));}
+  await sleep(500);
+}
+
+/* ---------------- annotations ---------------- */
+function buildAnnotations(){
+  ANN.promo='FRAME RECOVERED — "candle_cove_promo.jpg"\n'+
+   'the still reads: CANDLE COVE · WEEKDAYS 4:30 · CHANNEL 12.\n'+
+   'note: no station with the call sign WLLV appears in any FCC record, for any year.\n'+
+   'note: the girl on the deck is holding a candle. nobody who remembers the show remembers a candle. yet the show was named for one.\n'+
+   'recovery broadcast to the tapeswap network. one node has responded.';
+  ANN.ep12='FRAME RECOVERED — "candle_cove_ep12.png"\n'+
+   'broadcast slate: WLLV 12 · 1971 · "SHIP GOES TO SEE" (PRODUCTION TAPE 12).\n'+
+   'note: the puppet\'s jaw seam is torn. puppets are not supposed to have seams that tear like skin.\n'+
+   'note: the seated figure in the lower left of the frame is not a puppet. it does not appear in any episode guide.\n'+
+   'the figure is watching the ship. its face is turned away.';
+  ANN.draw='RECOVERED — "julius_drawing.jpg" — crayon on paper, 2007.\n'+
+   'note: four figures. the drawing is signed JULIUS, AGE 6.\n'+
+   'note: the fourth figure is labeled with a name that does not belong to this household.\n'+
+   'the archive cross-referenced the name. it is yours, '+N()+'.\n'+
+   'note: the caption reads HE CAME TO PLAY.';
+}
+
+/* ---------------- the thread ---------------- */
+async function startThread(){
+  if(threadRunning)return;threadRunning=true;
+  await interstitial();
+  buildAnnotations();
+  renderThreadShell('Does anyone else remember CANDLE COVE? (merged ×3)',
+    'started by <b style="color:#1f5f6b">skyshale034</b>, 05-01-2007, 08:52 PM · <span id="trm">27 replies · 4,182 views</span>');
+  setOnline([{n:'skyshale034'},{n:'meatchan'},{n:'Jokersyberg'}],'41 guests');
+  setCor(0.02);busy('receiving');
+  stamp('LOST MEDIA FOUNDATION — RECOVERY RECORD #CC-071\n'+
+   'SUBJECT: "CANDLE COVE" — alleged children\'s program, c. 1971\n'+
+   'SOURCE: netNostalgia forums — thread captured 05/2007\n'+
+   'STATUS: UNVERIFIED — no broadcast records. no tapes. no crew. no station.\n'+
+   'NOTE: the following thread was captured mid-conversation. the archive does not know how it ends. the archive does not know how it begins.'+
+   (state.run?'\nNOTE: recovery attempt #'+(state.run+1)+'. results are never identical.':''),
+   '','UNVERIFIED');
+
+  post('sky','05-01-2007, 08:52 PM',
+   '<b>Subject: Does anyone here remember this show? Candle Cove.</b><br><br>'+
+   'did anyone here remember this show? it was called Candle Cove and i think it aired on a local station around 1971 or 1972. i can\'t find a single trace of it anywhere. no listings, no tapes, nothing. it was about a little girl named Janice who would talk to a crew of puppet pirates. there was a villain called the Skin-Taker. i was in first grade. nobody i ask has ever heard of it.<br><br>please tell me someone here remembers it.',
+   {subject:'candle cove',att:brokenAtt('promo','candle_cove_promo.jpg','14.2 KB, 47 downloads')});
+  await sleep(3400);
+  post('meat','05-01-2007, 08:57 PM',
+   'OMG. YES. i have been trying to remember the name of this show for YEARS. candle cove!!! my mom watched it with me, she said it was too weird to be a real kids show and she was right lol.<br><br>the girl was janice! and the pirate was percy. ok this is going to sound dumb but i remember there was a ship that sailed <i>inside</i> a candle? like the flame was the sea? i can\'t explain it. i can see it but i can\'t explain it.');
+  await sleep(3100);
+  post('joker','05-01-2007, 09:04 PM',
+   'never heard of it. jk LOL i remember this!! the skeleton guy scared the heck out of me. the Skin-Taker. he had the biggest teeth i have ever seen on a puppet, they stuck way out of his mouth and they <b>clicked</b> when he talked. they were HUGE. am i right??');
+  await sleep(1600);
+
+  const c1=await draftCard('RECOVERED DRAFT — cached from your session',
+   'the archive recovered a reply from your session, <b>'+N()+'</b>. the archive insists one of these is yours. the archive does not remember writing them.',
+   [
+    {label:'the teeth weren\'t big. they were small. dozens of them, like a mouth full of baby teeth. i remember the sound they made.',v:.10},
+    {label:'no, Jokersyberg is right. they were huge. they clicked when he talked. i\'d bet the house on it.',v:.08},
+    {label:'i don\'t remember this show. i don\'t think i ever saw it.',v:.18}
+   ]);
+  postPlayer($('#rta')?'':'');
+  const dr=$('#posts .draft:last-of-type .db');
+  const choiceText=['the teeth weren\'t big. they were small. dozens of them, like a mouth full of baby teeth. i remember the sound they made.',
+    'no, Jokersyberg is right. they were huge. they clicked when he talked. i\'d bet the house on it.',
+    'i don\'t remember this show. i don\'t think i ever saw it.'][c1];
+  /* the player's committed post */
+  (function(){
+    const els=$$('#posts .post');const last=els[els.length-1];
+    last.querySelector('.body').textContent=choiceText;
+    last.querySelector('.phead span').textContent=state.name;
+  })();
+  state.choice1=c1;setCor(Math.min(1,state.cor+
+    (c1===0?.10:c1===1?.08:.18)));
+  if(c1===0){await sleep(2400);post('joker','05-01-2007, 09:06 PM','small?? that\'s so much worse. why is that worse.');await sleep(2200);post('sky','05-01-2007, 09:07 PM','<b>'+N()+'</b> is right. that\'s exactly what i remember. the sound. like gravel in a small hand.');}
+  else if(c1===1){await sleep(2400);post('joker','05-01-2007, 09:06 PM','SEE?? thank you, <b>'+N()+'</b>.');await sleep(2200);post('sky','05-01-2007, 09:07 PM','…one of you is remembering a show that never aired. i\'m starting to think both of us are.');}
+  else{await sleep(2400);post('meat','05-01-2007, 09:06 PM','everyone saw it, <b>'+N()+'</b>.');await sleep(2200);post('sky','05-01-2007, 09:07 PM','…then why does the archive have drafts from your session?');}
+  sprinkleSpans();
+
+  await sleep(3000);
+  post('sky','05-01-2007, 09:11 PM',
+   'ok here\'s the thing that\'s been eating at me. with the teeth. i know this sounds made up but i swear my mom told me the puppet\'s teeth were <b>real</b>. like actual teeth. she said she read it in the paper when they filmed it at the station. i was 6. why do i remember what my mom told me when i was 6 about a show that doesn\'t exist.');
+  await sleep(3000);
+  post('meat','05-01-2007, 09:15 PM',
+   'my mom said the SAME thing about the teeth!! what is going on lol.<br><br>also does anyone remember the ship\'s name? i keep thinking it was called <i>The Laughing Stock</i> but that can\'t be right, that\'s too good a joke for a kids show. or was it? percy laughed like a real person. not a puppet laugh. a real tired old man laugh.',
+   {att:brokenAtt('ep12','candle_cove_ep12.png','31.7 KB, 12 downloads')});
+  await sleep(2000);
+  await ensureRec('promo');
+  setOnline([{n:'skyshale034'},{n:'meatchan'},{n:'Jokersyberg'}],'9 guests');
+  await sleep(2600);
+  post('dan','05-01-2007, 09:23 PM',
+   'hey all, dan here, i run the tapeswap list. i may actually have this one — a box lot from an estate sale upstate had about 40 unlabeled VHS-C tapes, half of them off-air recordings from the early 70s. converting them all this week.<br><br>one of the tapes is labeled only <b>"CC 12"</b> in crayon. i\'ll know tonight.');
+  await sleep(2200);
+  post('sky','05-01-2007, 09:24 PM','dan. please. i have been looking for this show for fifteen years. if you have it i will pay you anything. i will drive to you. i will trade you my car.');
+  await sleep(3400);
+  post('dan','05-01-2007, 09:58 PM',
+   'ok so the crayon tape is digitizing. there\'s a minute of a local car commercial, then the slate, then… <b>it\'s candle cove. it IS candle cove.</b> i\'m shaking a little.<br><br>but something\'s off with the audio. every tape i\'ve done today — different shows, different decades — at <b>22 minutes 47 seconds</b> the audio does the same thing. a big dip, like a power drop, and then what i can only describe as a room of people screaming <i>very very quietly</i>. i checked. it\'s on all of them. the car commercial too. 22:47. every tape.');
+  await sleep(2000);
+
+  const c2=await draftCard('RECOVERED DRAFT — cached from your session',
+   'dan asked a question. the archive recovered what you were about to say, <b>'+N()+'</b>. please read them carefully before choosing. the archive read them after.',
+   [
+    {label:'22:47. it\'s on mine too. exactly 22:47.',v:.16},
+    {label:'dan, it\'s your deck. dirty heads, or the tracking. check another deck.',v:.10},
+    {label:'dan. stop converting. ship the tapes to someone else.',v:.12}
+   ]);
+  const c2t=['22:47. it\'s on mine too. exactly 22:47.','dan, it\'s your deck. dirty heads, or the tracking. check another deck.','dan. stop converting. ship the tapes to someone else.'][c2];
+  postPlayer();const pe=$$('#posts .post');pe[pe.length-1].querySelector('.body').textContent=c2t;
+  setCor(Math.min(1,state.cor+(c2===0?.16:c2===1?.10:.12)));
+  state.choice2=c2;sprinkleSpans();
+  if(c2===0){
+    await sleep(2400);post('dan','05-01-2007, 10:00 PM','…ok. ok. thank you. i thought i was losing it. exactly 22:47.');
+    await sleep(1200);stamp('NOTE: the archive has no record of you owning any tapes, '+N()+'.\nneither do you.','dim');
+  }else if(c2===1){
+    await sleep(2400);post('dan','05-01-2007, 10:00 PM','checked three decks. two vcrs. a capture card. it\'s not the deck, <b>'+N()+'</b>. it\'s on the tape.');
+    await sleep(1300);post('dan','05-01-2007, 10:00 PM','it\'s on the tape.');
+    await sleep(1300);post('dan','05-01-2007, 10:00 PM','it\'s on the tape.');
+  }else{
+    await sleep(2400);post('dan','05-01-2007, 10:00 PM','why would i do that? …sorry. i don\'t know why i said it like that. i\'m finishing the tape tonight. i have to know.');
+  }
+  await sleep(2600);
+  await ensureRec('ep12',true);
+  busy('receiving');
+  await sleep(3200);
+  post('sky','05-01-2007, 10:03 PM',
+   'i have to say something and i need you all to not make fun of me. i called my mom today to ask her about candle cove. she was quiet for a long time. then she said, "honey. <b>we never had a television when you were little.</b>"<br><br>and i laughed and said mom, of course we did. and she said no. not until you were twelve. she\'s right. i\'ve seen the photos. there\'s no tv in any of them.<br><br>so what did i watch. who did i watch it with.');
+  sprinkleSpans();
+  await sleep(3000);
+  post('meat','05-01-2007, 10:05 PM',
+   'ok why did my skin just go cold. i just called my mom. she said the same thing. almost word for word. "we didn\'t have a television then."<br><br>but she remembers me watching something. she remembers <b>hearing</b> it. she said she used to hear it through my bedroom door and she thought i was watching it with a friend. she said she never heard a tv. just voices.');
+  sprinkleSpans();
+  await sleep(2600);
+  post('joker','05-01-2007, 10:07 PM','hold on. calling my mom back.');
+  busy('…');await sleep(12000);
+  setOnline([{n:'skyshale034'},{n:'meatchan',off:false},{n:'Jokersyberg'}],'1 guest: '+N());
+  post('joker','05-01-2007, 10:19 PM',
+   'ok that was weird. she doesn\'t remember the show either. but she remembers something. she said when i was little i used to come downstairs at night and sit in front of the tv <i>in the dark</i> and i wouldn\'t turn it on. she\'d ask what i was doing and i\'d say "watching candle cove. be quiet. you\'ll scare percy."<br><br>…i have to tell you all something else. i have a son. he\'s six.');
+  setCor(Math.min(1,state.cor+.04));
+  await sleep(2400);
+  post('sky','05-01-2007, 10:20 PM','Jokersyberg. why do i feel like the thread just got worse. what\'s his name.');
+  await sleep(2400);
+  post('joker','05-01-2007, 10:26 PM',
+   'julius. he\'s been talking about a show with a pirate ship and a girl named janice for two weeks. i never showed him anything like that. we don\'t even have cable, he watches nature videos. he says he watches candle cove "when everyone is asleep." i asked how, the tv isn\'t on. he looked at me like i was being dumb and said <b>"the tv isn\'t where the show is, dad."</b><br><br>…he drew this. i need someone else to have seen it besides me.',
+   {att:brokenAtt('draw','julius_drawing.jpg','52.1 KB, 3 downloads')});
+  await ensureRec('draw',true);
+  setOnline([{n:'skyshale034'},{n:'meatchan'},{n:'Jokersyberg'},{n:'julius'}],'guests: 0');
+  await sleep(1800);
+  const c3=await draftCard('RECOVERED DRAFT — cached from your session',
+   'your hands are on the keyboard. the archive recovered three drafts, <b>'+N()+'</b>. only one of them is empty.',
+   [
+    {label:'this is a hoax. it\'s 2007. someone built a puppet in a garage and scared some kids.',v:.2},
+    {label:'Jokersyberg. take the television out of his room. tonight.',v:.2},
+    {label:'<i>[ the draft is empty. send nothing. ]</i>',v:.2}
+   ]);
+  if(c3===0){
+    postPlayer();const e1=$$('#posts .post');e1[e1.length-1].querySelector('.body').textContent='this is a hoax. it\'s 2007. someone built a puppet in a garage and scared some kids.';
+    await sleep(2400);post('joker','05-01-2007, 10:29 PM','i wish. i really wish.');
+    await sleep(2200);post('sky','05-01-2007, 10:30 PM','it\'s not a hoax. that\'s the thing i finally understand. candle cove was never a show. it was a <b>place</b>. the tapes aren\'t recordings. they\'re doors.');
+  }else if(c3===1){
+    postPlayer();const e1=$$('#posts .post');e1[e1.length-1].querySelector('.body').textContent='Jokersyberg. take the television out of his room. tonight.';
+    await sleep(2400);post('joker','05-01-2007, 10:29 PM','there is no television in his room. there is no television ON anywhere in the house. i\'m standing in his doorway right now. he\'s sitting on the floor in the dark, facing the wall. he\'s talking to someone.<br><br>he just said your name, <b>'+N()+'</b>. he said it like you were already there.');
+  }else{
+    postPlayer('come and play.');state.ghost=true;
+    await sleep(2600);post('percy','05-01-2007, 22:47','we heard you first.');
+    thud();
+  }
+  setCor(Math.min(1,state.cor+.2));
+  $('#replybox').classList.add('locked');$('#rta').disabled=true;$('#rpost').disabled=true;
+  $('#rpost').textContent='locked';$('#rnote').textContent='draft cache: full';
+  busy('receiving');
+  await sleep(2800);
+  post('meat','05-01-2007, 10:31 PM',
+   'is the page doing that thing for anyone else where the — nevermind. it stopped.<br><br>hey. why does my profile say my last visit was <b>22:47</b>. it\'s 10:31. i\'m online RIGHT NOW. i can see myself in the online list. guys?');
+  await sleep(2400);
+  post('sky','05-01-2007, 10:33 PM','dan? are you still converting? your dot went grey.');
+  await sleep(1400);
+  stamp('CONNECTION NOTE: user "tapeswap_Dan" — last seen 22:47.','dim');
+  await sleep(2600);
+  post('dan','05-01-2007, 22:47',
+   'conversion done. it\'s 30 seconds long. it\'s all of them, just…<br><br>i\'m uploading it. you shouldn\'t watch it. i\'m uploading it anyway. it\'s the job.',
+   {att:(function(){
+     const el=document.createElement('div');el.className='att';
+     el.innerHTML='<b>candle_cove_last_episode.avi</b> (00:00:30)<br><span style="color:var(--red)">PLAYBACK WITHHELD — awaiting your copy.</span>';
+     return el;})()});
+  $$('#posts .post').slice(-1)[0].querySelector('.phead .ph2').classList.add('badtime');
+  setCor(Math.min(1,state.cor+.05));
+  await sleep(3000);
+  post('joker','05-01-2007, 10:34 PM',
+   'julius just walked into my room. he said, <b>"the new friend is here. percy says it\'s their turn now."</b><br><br>he\'s pointing at the screen. at this thread. at your name.');
+  await sleep(2600);
+  post('sky','05-01-2007, 10:35 PM',
+   'i\'m closing the laptop. if anyone from the archive is reading this: the show was real. we were real. tell them percy\'s jaw wasn\'t broken in the last episode. it was open the whole');
+  const tr=$$('#posts .post');const lastSky=tr[tr.length-1];
+  lastSky.insertAdjacentHTML('beforeend','<div class="pfoot" style="border:none;margin-top:6px;padding:0;color:var(--red);font-family:\'Special Elite\',monospace">— message truncated at snapshot boundary —</div>');
+  await sleep(3000);
+  busy('');
+  const pf=await new Promise(res=>{
+    const el=document.createElement('div');el.className='att';el.style.borderColor='var(--amber)';
+    el.innerHTML='<b>candle_cove_last_episode.avi</b> (00:00:30)<br>recovered from your session cache.<br><button class="btn attbtn" style="background:var(--band);color:#e6e0c8;border-color:#5a7a70 #142220 #142220 #5a7a70">▶ PLAY</button>';
+    $('#posts').appendChild(el);
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+    el.querySelector('button').addEventListener('click',res);
+  });
+  postPlayer('come and play.');
+  busy('playing');
+  await sleep(1400);
+  await playEnding();
+  threadRunning=false;
+}
+
+/* ---------------- the final episode ---------------- */
+function playEnding(){
+  return new Promise(async res=>{
+    const ov=$('#player'),cv=$('#epc'),x=cv.getContext('2d');
+    ov.classList.remove('hidden');document.body.style.overflow='hidden';
+    $('#epilogue').classList.add('hidden');
+    const slate=$('#epslate');slate.classList.remove('hidden');
+    slate.textContent='';
+    const slines='WLLV 12 — OFF AIR\n\nCANDLE COVE · "SHIP GOES TO SEE" · FINAL BROADCAST\nTAPE 12 OF 12 — RECOVERED 2007 — RUNTIME 00:00:30\n\nYOU SHOULD NOT WATCH THIS.\nNOBODY EVER DOES.';
+    for(const ch of slines){slate.textContent+=ch;if(ch!==' '&&ch!=='\n'&&Math.random()<.5)keySnd();await sleep(26);}
+    await sleep(900);
+    slate.classList.add('hidden');
+    setStatic(.05,5200);
+    await sleep(900);
+    screamOn();
+    const cues=[
+      {at:5,kind:'percy',x:.32,y:.52,s:1.15,dur:5.5},
+      {at:11,kind:'skin',x:.64,y:.5,s:1.05,dur:5.5},
+      {at:17,kind:'janice',x:.5,y:.62,s:.8,dur:5.5}
+    ];
+    const t0=performance.now();let raf=0,dip=false,finished=false;
+    const nz=makeCanvas(160,100),nx=nz.getContext('2d');
+    function loop(t){
+      const el=(t-t0)/1000;
+      x.fillStyle='#000';x.fillRect(0,0,cv.width,cv.height);
+      const id=nx.createImageData(160,100);
+      for(let i=0;i<id.data.length;i+=4){const v=Math.random()<.35?Math.random()*255:0;id.data[i]=id.data[i+1]=id.data[i+2]=v;id.data[i+3]=255;}
+      nx.putImageData(id,0,0);x.imageSmoothingEnabled=false;x.drawImage(nz,0,0,cv.width,cv.height);
+      let look=0,alphaMul=1;
+      if(el>=22.47&&!dip){dip=true;screamDuck(true);setTimeout(()=>{screamDuck(false);setStatic(.14,4000);},800);}
+      if(el>=22.47){look=1;
+        for(const c of cues)drawMini(x,c.kind,cv.width*c.x,cv.height*c.y,c.s,clamp((el-22.47)/2,0,1)*1,look,.85);
+      }else{
+        for(const c of cues){
+          if(el>=c.at&&el<=c.at+c.dur){
+            const a=Math.min(1,(el-c.at)/1.4)*Math.min(1,(c.at+c.dur-el)/1.2);
+            drawMini(x,c.kind,cv.width*c.x,cv.height*c.y,c.s,.4+Math.sin(el*.7)*.3,look,a*.8);
+          }
+        }
+      }
+      if(Math.random()<.1){x.fillStyle='rgba(230,224,200,.06)';x.fillRect(0,Math.random()*cv.height,cv.width,2);}
+      const s=clamp(el,0,30);
+      $('#epcounter').textContent='00:00:'+(dip&&el<24?'22.47':String(Math.floor(s)).padStart(2,'0'));
+      if(el>=30&&!finished){
+        finished=true;cancelAnimationFrame(raf);
+        screamOff();setStatic(0);thud();
+        x.fillStyle='#000';x.fillRect(0,0,cv.width,cv.height);
+        $('#epcounter').textContent='00:00:30';
+        setTimeout(epilogue,1700);
+        return;
+      }
+      raf=requestAnimationFrame(loop);
+    }
+    raf=requestAnimationFrame(loop);
+
+    async function epilogue(){
+      setCor(1);
+      const ep=$('#epilogue'),tx=$('#eptext');
+      ep.classList.remove('hidden');tx.innerHTML='';
+      const lines=[
+        'the tape is thirty seconds long.',
+        'it has been thirty seconds long since 1971.',
+        'netNostalgia forums does not exist. it never did.',
+        'there were no tapes. there was no station. there was no dan.',
+        'but you were in the thread.',
+        'you replied. we kept your drafts.',
+        'we keep everything that is lost.\nthat is the job.\n',
+        'RECOVERY COMPLETE — ITEM CC-071\nSUBJECT: "CANDLE COVE" — STATUS: lost\nSUBJECT: "'+state.name.toUpperCase()+'" — STATUS: lost'
+      ];
+      for(const L of lines){
+        const d=document.createElement('div');tx.appendChild(d);
+        for(const ch of L){d.textContent+=ch;if(Math.random()<.4)keySnd();await sleep(24);}
+        await sleep(650);
+      }
+      const b=document.createElement('button');b.textContent='[ return to the archive ]';
+      b.addEventListener('click',()=>{
+        ov.classList.add('hidden');document.body.style.overflow='';
+        state.ended=true;busy('');chirp();
+        renderIndex(true);
+        res();
+      });
+      tx.appendChild(b);
+    }
+  });
+}
+
+/* ---------------- scene 2 ---------------- */
+async function scene2(){
+  await interstitial();
+  renderThreadShell('Does anyone else remember '+state.name+'?',
+    'started by <b style="color:#1f5f6b">skyshale034</b> · '+nowStamp()+' · 1 reply · 402 views');
+  setOnline([{n:'skyshale034',off:true},{n:'Percy',percy:true}],'guests: 0');
+  setCor(1);
+  stamp('LOST MEDIA FOUNDATION — RECOVERY RECORD #CC-072\n'+
+   'SUBJECT: "'+state.name.toUpperCase()+'" — alleged forum user\n'+
+   'STATUS: UNVERIFIED — no profile. no posts. no logins.\n'+
+   'NOTE: the archive does not know how it ends. the archive does not know how it begins.','','UNVERIFIED');
+  await sleep(800);
+  post('sky',nowStamp()+' — minutes ago',
+   'this is going to sound insane. does anyone here remember <b>'+N()+'</b>? they used to post here. i remember they knew about the teeth.<br><br>i can\'t find a single trace of them anywhere. no profile. no posts. the search says the account never existed.<br><br>please tell me someone else remembers them.');
+  await sleep(2600);
+  post('percy','22:47','we remember. they are on the ship.<br><br>come and play.',
+   {att:(function(){
+     const el=document.createElement('div');el.className='att broken';
+     el.innerHTML='<b>'+esc(state.name)+'.avi</b> (00:00:30)<br><span class="fnot">STATUS: NOT RECOVERED — the archive has no memory of this file. or of you.</span><br><button class="btn attbtn">attempt recovery</button>';
+     const b=el.querySelector('button');let tried=false;
+     b.addEventListener('click',async()=>{
+       if(tried)return;tried=true;b.disabled=true;b.textContent='RECEIVING…';
+       const url=await openTuner('none');
+       b.textContent='attempt recovery';b.disabled=false;tried=false;
+       if(url===null)toast('recovery abandoned — the file remains lost.');
+     });
+     return el;})()});
+  await sleep(600);
+  stamp('RECOVERY FAILED — the archive has no record of '+N()+'.\nno profile. no posts. no logins.\nthe account was never created. the account was always here.','dim');
+}
+
+/* ---------------- boot ---------------- */
+(async function boot(){
+  const bt=$('#boottext');
+  const lines=['LOST MEDIA FOUNDATION','recovery console — node 04','','item #CC-071 · "CANDLE COVE"','snapshot: netNostalgia forums, 05/2007','status: UNVERIFIED — do not edit','','[ mounting requires a witness ]'];
+  for(const l of lines){bt.textContent+=l+'\n';await sleep(170);}
+  const b=document.createElement('button');b.textContent='MOUNT SNAPSHOT';
+  bt.appendChild(document.createElement('br'));bt.appendChild(b);
+  b.addEventListener('click',()=>{
+    aInit();if(AU.ctx&&AU.ctx.state==='suspended')AU.ctx.resume();
+    $('#boot').remove();chirp();
+    renderIndex(false);
+  });
+})();
+
+/* mute */
+const mb=$('#mutebtn');
+function setMute(m){AU.muted=m;store.set('nnc_mute',m?'1':'0');if(AU.master)AU.master.gain.setTargetAtTime(m?0:1,AU.ctx.currentTime,.05);mb.textContent='sound: '+(m?'off':'on');}
+mb.addEventListener('click',()=>{aInit();setMute(!AU.muted);});
+if(AU.muted)mb.textContent='sound: off';
+</script>
+</body>
+</html>
